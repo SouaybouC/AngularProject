@@ -1,0 +1,65 @@
+import { Component } from '@angular/core';
+import { BehaviorSubject } from "rxjs";
+import{Item} from '../item.model'
+@Component({
+  selector: 'app-item',
+  templateUrl: './item.component.html',
+  styleUrls: ['./item.component.scss']
+})
+export class ItemComponent {
+
+  items = [
+    {id : 1,
+      name : 'Iphone 14',
+      image : 'data:image/jpeg;base64,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',
+      color : 'black',
+      weight : '270g',
+      price : '$2000',
+    },
+    {
+      id:2,
+      name : 'Samsung Galaxy S22 Ultra',
+      image : 'https://images.samsung.com/fr/smartphones/galaxy-s22-ultra/buy/02_carousel/05_exclusive-colors/s22_ultra_exclusive_carousel_graphite_productkv_mo_nocopy.jpg',
+      color : 'Light grey',
+      weight : '229g',
+      price : '$1200',
+
+    },
+    {
+      id: 3,
+      name : 'Google Pixel 7 Pro',
+      image : 'https://m.media-amazon.com/images/I/711GOHSF5wL._AC_SL1500_.jpg',
+      color : 'Black',
+      weight : '230g',
+      price : '$899',
+    }
+  ]
+
+  cart: any[] = [];
+  productToUpdate: any[] = [];
+  cartString = "";
+  checkIfExistInLocalStorage = false;
+  title = "Welcome in YourShop"
+  originaTitle = "Welcome in YourShop"
+  priceStringToInt = 0;
+
+  addItem(product:any) {
+
+          product['quantity'] = 1;
+          product['totalCosts'] = product['price'];
+          this.cart.push(product);
+
+
+      // On convertit le tableau en chaine de caractère afin de l'insérer dans le localStorage
+      this.cartString = JSON.stringify(this.cart);
+      localStorage.setItem("cart", this.cartString);
+  }
+
+  over(product:any) {
+      this.title = "Product selected : "+product['name'];
+  }
+
+  leave() {
+      this.title = this.originaTitle;
+  }
+}

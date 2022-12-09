@@ -1,0 +1,16 @@
+<p>{{title}}</p>
+<div class="card-group">
+  <br>
+  <div *ngFor="let item of items" class="card">
+    <img class="card-img-top" src={{item.image}} alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Name: {{item.name}}</h5>
+      <p class="card-text">Color: {{item.color}}</p>
+      <p class="card-text">Weight: {{item.weight}}</p>
+      <p class="card-text">Price: {{item.price}}</p>
+      <button type="button"  (mouseleave)="leave()"  (mouseover)="over(item)" (click)="addItem(item)" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+        Add to Cart
+      </button>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+    </div>
